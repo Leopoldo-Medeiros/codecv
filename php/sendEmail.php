@@ -380,6 +380,11 @@ if(Request::isPost()) {
                   <table role="presentation" border="0" cellpadding="0" cellspacing="0">
                     <tr>
                       <td>
+                        <p>
+                          <a href="https://www.codecv.ie/" class="logo">
+                            <img src="assets/img/header/logo/codecv-logo.png" alt="">
+                          </a>
+                        </p>
                         <p>Hi there,</p>
                         <p>Someone send to you a contact from you website. Follow his message:</p>
                         <p>&nbsp;</p>
