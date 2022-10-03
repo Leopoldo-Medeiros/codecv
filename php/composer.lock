@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "a5038873ce61ca92a9662faee906a224",
+    "content-hash": "03b3045f11b4c17013b8e68c89055412",
     "packages": [
         {
             "name": "graham-campbell/result-type",
@@ -70,25 +70,32 @@
         },
         {
             "name": "josantonius/request",
-            "version": "1.0.0",
+            "version": "2.0.1",
             "source": {
                 "type": "git",
-                "url": "https://github.com/Josantonius/PHP-Request.git",
-                "reference": "43aee58d4c59fb5f5f70afb188e389524c27eb77"
+                "url": "https://github.com/josantonius/php-request.git",
+                "reference": "43fb7dedd951adfff99d31bf66e727c6f8721c61"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/Josantonius/PHP-Request/zipball/43aee58d4c59fb5f5f70afb188e389524c27eb77",
-                "reference": "43aee58d4c59fb5f5f70afb188e389524c27eb77",
+                "url": "https://api.github.com/repos/josantonius/php-request/zipball/43fb7dedd951adfff99d31bf66e727c6f8721c61",
+                "reference": "43fb7dedd951adfff99d31bf66e727c6f8721c61",
                 "shasum": ""
             },
             "require": {
-                "php": ">=7.0"
+                "josantonius/validate": "^1.0",
+                "php": "^7.4"
+            },
+            "require-dev": {
+                "friendsofphp/php-cs-fixer": "^2.3 || ^2.8",
+                "phpmd/phpmd": "^2.6",
+                "phpunit/phpunit": "^5.7 || ^6.0",
+                "squizlabs/php_codesniffer": "^3.0"
             },
             "type": "library",
             "extra": {
                 "branch-alias": {
-                    "dev-master": "1.0-dev"
+                    "dev-master": "2.0-dev"
                 }
             },
             "autoload": {
@@ -103,28 +110,109 @@
             "authors": [
                 {
                     "name": "Josantonius",
-                    "email": "info@josantonius.com",
-                    "homepage": "https://github.com/josantonius",
+                    "email": "hello@josantonius.com",
+                    "homepage": "https://josantonius.com",
                     "role": "Developer"
                 }
             ],
             "description": "PHP library for handling requests.",
             "keywords": [
-                " GET",
-                " POST",
                 "ajax",
                 "delete",
+                "get",
                 "http methods",
                 "php",
+                "post",
                 "put",
                 "request"
             ],
             "support": {
-                "issues": "https://github.com/Josantonius/PHP-Request/issues",
-                "source": "https://github.com/Josantonius/PHP-Request/tree/1.0.0"
+                "forum": "http://stackoverflow.com/tags/josantonius/php-request",
+                "issues": "https://github.com/josantonius/php-request/issues",
+                "source": "https://github.com/josantonius/php-request"
             },
+            "funding": [
+                {
+                    "url": "https://github.com/Josantonius",
+                    "type": "github"
+                }
+            ],
             "abandoned": true,
-            "time": "2017-01-17T03:12:07+00:00"
+            "time": "2022-08-18T20:25:15+00:00"
+        },
+        {
+            "name": "josantonius/validate",
+            "version": "1.0.1",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/josantonius/php-validate.git",
+                "reference": "596a81d8e4a9b090a3798acfe8e93c726bdcba53"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/josantonius/php-validate/zipball/596a81d8e4a9b090a3798acfe8e93c726bdcba53",
+                "reference": "596a81d8e4a9b090a3798acfe8e93c726bdcba53",
+                "shasum": ""
+            },
+            "require": {
+                "php": "^7.0"
+            },
+            "require-dev": {
+                "friendsofphp/php-cs-fixer": "^2.3 || ^2.8",
+                "phpmd/phpmd": "^2.6",
+                "phpunit/phpunit": "^5.7 || ^6.0",
+                "squizlabs/php_codesniffer": "^3.0"
+            },
+            "type": "library",
+            "extra": {
+                "branch-alias": {
+                    "dev-master": "1.0-dev"
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "Josantonius\\Validate\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Josantonius",
+                    "email": "hello@josantonius.com",
+                    "homepage": "https://josantonius.com",
+                    "role": "Developer"
+                }
+            ],
+            "description": "PHP simple library for managing of data types.",
+            "keywords": [
+                "IP",
+                "array",
+                "boolean",
+                "data type",
+                "email",
+                "float",
+                "integer",
+                "json",
+                "object",
+                "string",
+                "url"
+            ],
+            "support": {
+                "forum": "http://stackoverflow.com/tags/josantonius/php-validate",
+                "issues": "https://github.com/josantonius/php-validate/issues",
+                "source": "https://github.com/josantonius/php-validate"
+            },
+            "funding": [
+                {
+                    "url": "https://github.com/Josantonius",
+                    "type": "github"
+                }
+            ],
+            "abandoned": true,
+            "time": "2022-08-18T17:48:06+00:00"
         },
         {
             "name": "phpoption/phpoption",
@@ -267,16 +355,16 @@
         },
         {
             "name": "sendgrid/sendgrid",
-            "version": "8.0.1",
+            "version": "7.11.5",
             "source": {
                 "type": "git",
                 "url": "https://github.com/sendgrid/sendgrid-php.git",
-                "reference": "285381257100b73aa50d8d70f0bcfb1f48b63747"
+                "reference": "1d2fd3b72687fe82264853a8888b014f8f99e81f"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/sendgrid/sendgrid-php/zipball/285381257100b73aa50d8d70f0bcfb1f48b63747",
-                "reference": "285381257100b73aa50d8d70f0bcfb1f48b63747",
+                "url": "https://api.github.com/repos/sendgrid/sendgrid-php/zipball/1d2fd3b72687fe82264853a8888b014f8f99e81f",
+                "reference": "1d2fd3b72687fe82264853a8888b014f8f99e81f",
                 "shasum": ""
             },
             "require": {
@@ -284,7 +372,7 @@
                 "ext-json": "*",
                 "ext-mbstring": "*",
                 "ext-openssl": "*",
-                "php": ">=7.3",
+                "php": ">=5.6",
                 "sendgrid/php-http-client": "~3.10",
                 "starkbank/ecdsa": "0.*"
             },
@@ -292,8 +380,7 @@
                 "sendgrid/sendgrid-php": "*"
             },
             "require-dev": {
-                "phpstan/phpstan": "^1.5",
-                "phpunit/phpunit": "^9",
+                "phpunit/phpunit": "^5.7.9 || ^6.4.3",
                 "squizlabs/php_codesniffer": "3.*",
                 "swaggest/json-diff": "^3.4"
             },
@@ -326,9 +413,10 @@
                 "twilio sendgrid"
             ],
             "support": {
-                "source": "https://github.com/sendgrid/sendgrid-php/tree/8.0.1"
+                "issues": "https://github.com/sendgrid/sendgrid-php/issues",
+                "source": "https://github.com/sendgrid/sendgrid-php/tree/7.11.5"
             },
-            "time": "2022-08-10T18:37:45+00:00"
+            "time": "2022-03-09T20:21:56+00:00"
         },
         {
             "name": "starkbank/ecdsa",
@@ -710,5 +798,5 @@
     "prefer-lowest": false,
     "platform": [],
     "platform-dev": [],
-    "plugin-api-version": "2.3.0"
+    "plugin-api-version": "2.0.0"
 }

@@ -1,8 +1,14 @@
 <?php
-require_once(__DIR__ . '/vendor/autoload.php');
+
+require __DIR__ . '/vendor/autoload.php';
 
 use Josantonius\Request\Request;
+use SendGrid\Mail\From;
+use SendGrid\Mail\HtmlContent;
 use SendGrid\Mail\Mail;
+use SendGrid\Mail\PlainTextContent;
+use SendGrid\Mail\Subject;
+use SendGrid\Mail\To;
 
 $dotenv = Dotenv\Dotenv::createImmutable(__DIR__);
 $dotenv->load();
@@ -13,23 +19,22 @@ if(Request::isPost()) {
     $post_vars = $_POST()->asArray();
 
     $name = $post_vars['name'];
-    $email = $post_vars['email'];
+    $email_from = $post_vars['email'];
     $message = $post_vars['message'];
 
-    $email = new Mail();
-    $email->setFrom($email, $name);
-    $email->setSubject("Contact from CODECV Website");
-    $email->addTo("codecvinfo@gmail.com", "CODECV");
-    $email->addContent("text/plain", "
-                        Hi there,
-                        Someone send to you a contact from you website. Follow his message:
-                        Message: '.$message.'
-                        Name: '.$name.'
-                        Email: '.$email.'
-                        Good luck! Hope it works.");
-    $email->addContent(
-        "text/html", '
-            <!doctype html>
+    $from = new From($email_from, $name);
+    $subject = new Subject("Contact from CODECV Website");
+    $to = new To("codecvinfo@gmail.com", "CODECV");
+    $plainTextContent = new PlainTextContent(
+        "Hi there,
+                Someone send to you a contact from you website. Follow his message:
+                Message: '.$message.'
+                Name: '.$name.'
+                Email: '.$email_from.'
+                Good luck! Hope it works."
+    );
+    $htmlContent = new HtmlContent(
+        '<!doctype html>
             <html>
               <head>
                 <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
@@ -391,7 +396,7 @@ if(Request::isPost()) {
                                     <p>'.$message.'</p>
                                     <p>&nbsp;</p>
                                     <p>Name: '.$name.'</p>
-                                    <p>Email: '.$email.'</p>
+                                    <p>Email: '.$email_from.'</p>
                                     <p>Good luck! Hope it works.</p>
                                   </td>
                                 </tr>
@@ -428,7 +433,15 @@ if(Request::isPost()) {
               </body>
             </html>'
     );
-    $sendgrid = new \SendGrid(getenv('SENDGRID_API_KEY', "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"));
+    $email = new Mail(
+        $from,
+        $to,
+        $subject,
+        $plainTextContent,
+        $htmlContent
+    );
+
+    $sendgrid = new \SendGrid(getenv('SENDGRID_API_KEY', ""));
     try {
         $response = $sendgrid->send($email);
         echo "OK";

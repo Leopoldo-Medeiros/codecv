@@ -22,7 +22,7 @@ $(function() {
                 messages: {
                     name: "Please enter your name",
                     email: "Please enter a valid email address",
-                    message: "Please enter a message"
+                    message: "Please enter a message with min length 5"
                 },
                 /* submit via ajax */
                 submitHandler: function(form) {
